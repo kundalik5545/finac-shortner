@@ -75,5 +75,6 @@ Initialize git then commit all changes and create new repo. Then add repo and it
 ## Project Structure
 
 After doing all above changes our project structure will look like this.
+
 ![Project Structure](./public/screenshot/project-structure-01.png)
 ![Project Structure](./public/screenshot/image.png)
