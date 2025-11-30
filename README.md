@@ -55,6 +55,7 @@ export default function RootLayout({
 ```
 
 Inside global.css file remove tw-animate-css as shown below
+
 ![Removed tw-animate-css](./public/screenshot/02-remvoe-tw-file.png)
 
 ## Add Shadcn
@@ -80,3 +81,90 @@ Initialize git then commit all changes and create new repo. Then add repo and it
 After doing all above changes our project structure will look like this.
 
 ![Project Structure](./public/screenshot/01-project-structure.png)
+
+## Setup Prisma with Postgress
+
+This will install prisma and prims client to project.
+
+```pnpm
+pnpm add -D prisma
+pnpm add @prisma/client
+```
+
+### Initialize prisma
+
+This creates:
+
+- prisma/schema.prisma
+- .env (update DATABASE_URL here)
+
+```pnpm
+pnpm prisma init
+```
+
+After running above command we will get below schema.prisma file. Change output to **output = "../lib/generated/prisma"**
+
+```prisma
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+```
+
+we have to install **dotenv** package to our project.
+
+```pnpm
+pnpm add -D prisma dotenv
+```
+
+## Create Prisma Schema
+
+Now create basic prisma schema to migrate.
+
+```prisma
+model Testing {
+  id           String   @id @default(uuid())
+  testName     String
+  descriptions String
+
+  @@map("testings")
+}
+```
+
+After adding sample prisma model our schema.prisma file will look like this.
+
+```schema.prisma
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// sample schema
+model Testing {
+  id           String @id @default(uuid())
+  testName     String
+  descriptions String
+
+  @@map("testings")
+}
+```
