@@ -169,6 +169,15 @@ model Testing {
 }
 ```
 
+## .env
+
+Prisma init will create .env file we have to add our postgress credentials there
+
+```js
+DATABASE_URL =
+  "postgresql://postgres:password@localhost:5433/finac_urls?schema=public";
+```
+
 ## Apply Prisma migrations
 
 ```pnpm
