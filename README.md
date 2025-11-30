@@ -71,3 +71,9 @@ pnpm dlx shadcn@latest add button label input card select
 ## Init Github
 
 Initialize git then commit all changes and create new repo. Then add repo and its name then push the changes to github.
+
+## Project Structure
+
+After doing all above changes our project structure will look like this.
+![Project Structure](./public/screenshot/project-structure-01.png)
+![Project Structure](./public/screenshot/image.png)
