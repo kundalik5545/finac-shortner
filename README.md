@@ -168,3 +168,21 @@ model Testing {
   @@map("testings")
 }
 ```
+
+## Apply Prisma migrations
+
+```pnpm
+pnpm prisma migrate dev --name init
+```
+
+After running above command our prisma schema is migrated and new table with testing is created.
+
+![Postgress tables first view after migrations](./public/screenshot/03-postgress-tables-first-view.png)
+
+Also we can check our table inside prisma studio by running below command
+
+```pnpm
+pnpm prisma studio
+```
+
+![Prisma Studio Migration First View](./public/screenshot/04-prisma-studio-first-view.png)
