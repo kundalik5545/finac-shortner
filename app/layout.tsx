@@ -23,7 +23,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} antialiased`}
       >
-        <main className="container mx-auto p-4">
+        <main className="container mx-auto">
           {children}
         </main>
       </body>

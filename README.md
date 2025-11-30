@@ -15,7 +15,7 @@ After runnin this command install all node modules. Then setup basic page.tsx an
 ```tsx
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+    <div className="flex min-h-screen items-center justify-center">
       Home Page
     </div>
   );
@@ -54,6 +54,9 @@ export default function RootLayout({
 }
 ```
 
+Inside global.css file remove tw-animate-css as shown below
+![Removed tw-animate-css](./public/screenshot/02-remvoe-tw-file.png)
+
 ## Add Shadcn
 
 Install shadcn using below command
@@ -76,5 +79,4 @@ Initialize git then commit all changes and create new repo. Then add repo and it
 
 After doing all above changes our project structure will look like this.
 
-![Project Structure](./public/screenshot/project-structure-01.png)
-![Project Structure](./public/screenshot/image.png)
+![Project Structure](./public/screenshot/01-project-structure.png)
